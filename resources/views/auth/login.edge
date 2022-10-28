@@ -1,0 +1,27 @@
+
+@layout('layouts/app')
+<section class="flex justify-center py-10">
+  <h1 class="text-4xl text-center" >
+    Instagram
+   </h1>
+  <article class="border px-10 py-6 bg-white">
+  <form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+
+    <div >
+
+      <label>Email</label>
+      <input type="text" name="email">
+      {{ elIf('<span>$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" name="password">
+      {{ elIf('<span>$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
+    </div>
+
+
+    <input type="submit" value="cadastrar">
+  </form>
+  </article>
+</section>
