@@ -21,7 +21,7 @@ Route.on('/profile').render('profile')
 Route.get('/admin/painel','DashboardController.index').as('home.admin')
 
 //star users
-Route.get('users', 'UserController.index').as('users.index')
+Route.get('users/list', 'UserController.index').as('users.index')
 Route.post('users', 'UserController.store').as('users.store')
 Route.get('users/create', 'UserController.create').as('users.create')
 Route.get('users/:id', 'UserController.show').as('users.show')

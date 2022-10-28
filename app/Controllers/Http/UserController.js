@@ -3,6 +3,7 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
+const User = use('App/Models/User')
 
 /**
  * Resourceful controller for interacting with users
@@ -18,7 +19,9 @@ class UserController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-    return "ola"
+         response['']= await User.all()
+
+    return  view.render('admin.user.list.index',{users:})
   }
 
   /**
